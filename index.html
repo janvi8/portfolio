@@ -1,785 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="auto">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Janani Vijay – Designer & Frontend Developer</title>
-    <meta name="description"
-        content="Portfolio of Janani Vijay – UI/UX Designer & Frontend Developer. Selected work, case studies, skills, and contact." />
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2300d689'/%3E%3Ctext x='50' y='60' font-size='52' text-anchor='middle' fill='white' font-family='Arial, Helvetica, sans-serif'%3EJ%3C/text%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janani Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700|Oswald:700&display=swap" rel="stylesheet">
 
-    <style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        button,
-        input {
-            font: inherit;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* THEME TOKENS */
-        :root {
-            --bg: #0b0b0c;
-            --card: #131316;
-            --elev: #1b1b1f;
-            --text: #e9e9ee;
-            --muted: #9aa0a6;
-            --accent: #00d689;
-            --accent-2: #8b5cf6;
-            --ring: rgba(0, 214, 137, .35);
-            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
-            --radius-lg: 18px;
-            --radius-md: 14px;
-            --radius-sm: 10px;
-            --container: 1200px;
-            --gap: 22px;
-        }
-
-        /* Light theme variables */
-        html[data-theme="light"] {
-            --bg: #f7f8fb;
-            --card: #ffffff;
-            --elev: #ffffff;
-            --text: #0f172a;
-            --muted: #57607a;
-            --shadow: 0 10px 30px rgba(2, 6, 23, .08);
-            --ring: rgba(139, 92, 246, .28);
-        }
-
-        body {
-            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-            background: radial-gradient(1200px 600px at 10% -10%, rgba(139, 92, 246, .08), transparent 60%),
-                radial-gradient(1000px 500px at 90% 110%, rgba(0, 214, 137, .08), transparent 60%),
-                var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            width: min(100%, calc(var(--container) + 2rem));
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        /* HEADER */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            backdrop-filter: saturate(1.2) blur(10px);
-            background: color-mix(in oklab, var(--bg) 85%, transparent);
-            border-bottom: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: .9rem .5rem;
-            gap: 1rem;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: .8rem;
-            font-weight: 700;
-        }
-
-        .brand .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), var(--accent-2));
-            display: grid;
-            place-items: center;
-            color: #fff;
-            font-weight: 800;
-            box-shadow: var(--shadow);
-        }
-
-        .navlinks {
-            display: flex;
-            gap: .6rem;
-            align-items: center;
-        }
-
-        .navlinks a {
-            padding: .55rem .8rem;
-            border-radius: 999px;
-        }
-
-        .navlinks a:hover {
-            color: var(--text);
-            background: color-mix(in oklab, var(--text) 8%, transparent);
-        }
-
-        .cta {
-            padding: .65rem 1rem;
-            background: var(--text);
-            color: var(--text);
-            border-radius: 999px;
-            font-weight: 700;
-            box-shadow: var(--shadow);
-        }
-
-        .cta:hover {
-            transform: translateY(-1px);
-        }
-
-        .toggle {
-            border: 1px solid color-mix(in oklab, var(--text) 14%, transparent);
-            background: var(--card);
-            color: var(--text);
-            border-radius: 999px;
-            padding: .55rem .8rem;
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        /* HERO */
-        .hero {
-            padding: 64px 0 18px;
-        }
-
-        .hero-inner {
-            display: grid;
-            grid-template-columns: 1.2fr .8fr;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(28px, 4.2vw, 48px);
-            line-height: 1.1;
-            margin: 0 0 .6rem;
-        }
-
-        .subtitle {
-            color: var(--muted);
-            font-size: 1.05rem;
-        }
-
-        .badges {
-            display: flex;
-            gap: .6rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .badge {
-            background: var(--card);
-            border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
-            padding: .45rem .7rem;
-            border-radius: 999px;
-        }
-
-        .hero-card {
-            background: var(--card);
-            border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
-            border-radius: var(--radius-lg);
-            padding: 18px;
-            box-shadow: var(--shadow);
-        }
-
-        .kpis {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin-top: 12px;
-        }
-
-        .kpi {
-            background: var(--elev);
-            border-radius: var(--radius-md);
-            padding: 14px;
-            border: 1px solid color-mix(in oklab, var(--text) 10%, transparent);
-            text-align: center;
-        }
-
-        .kpi .num {
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-
-        .kpi .label {
-            color: var(--muted);
-            font-size: .85rem;
-        }
-
-        /* SECTION HEADERS */
-        .section {
-            padding: 32px 0;
-        }
-
-        .section h2 {
-            font-size: 1.6rem;
-            margin: 0 0 8px;
-        }
-
-        .section p.lead {
-            color: var(--muted);
-            margin: 0 0 16px;
-        }
-
-        /* FILTERS */
-        .filters {
-            display: flex;
-            gap: .5rem;
-            flex-wrap: wrap;
-            margin: 12px 0 22px;
-        }
-
-        .chip {
-            border: 1px solid color-mix(in oklab, var(--text) 14%, transparent);
-            background: var(--card);
-            border-radius: 999px;
-            padding: .45rem .8rem;
-            color: var(--muted);
-            cursor: pointer;
-        }
-
-        .chip.active,
-        .chip:hover {
-            color: var(--text);
-            border-color: color-mix(in oklab, var(--text) 28%, transparent);
-        }
-
-        /* PROJECT GRID */
-        .grid {
-            display: grid;
-            gap: var(--gap);
-            grid-template-columns: repeat(12, 1fr);
-        }
-
-        .project {
-            grid-column: span 4;
-            background: var(--card);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-        }
-
-    .project .thumb {
-  width: 100%;
-  height: 180px; /* adjust height if needed */
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--card-bg);
-}
-
-.project .thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top; /* 👈 ensures image starts from the top */
-  display: block;
-}
-
-
-
-        .project .body {
-            padding: 14px;
-            display: grid;
-            gap: 8px;
-        }
-
-        .project .title {
-            font-weight: 700;
-        }
-
-        .project .meta {
-            color: var(--muted);
-            font-size: .9rem;
-        }
-
-        .project .tags {
-            display: flex;
-            gap: .35rem;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            font-size: .75rem;
-            background: color-mix(in oklab, var(--text) 8%, transparent);
-            padding: .28rem .5rem;
-            border-radius: 999px;
-            color: var(--muted);
-        }
-
-        .project .actions {
-            margin-top: 6px;
-            display: flex;
-            gap: .6rem;
-        }
-
-        .btn {
-            background: var(--text);
-            color: var(--bg);
-            border: 0;
-            padding: .55rem .8rem;
-            border-radius: 10px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .btn.ghost {
-            background: transparent;
-            color: var(--text);
-            border: 1px solid color-mix(in oklab, var(--text) 25%, transparent);
-        }
-
-        /* ABOUT + SKILLS */
-        .cols {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--gap);
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
-            border-radius: var(--radius-lg);
-            padding: 18px;
-            box-shadow: var(--shadow);
-        }
-
-        .list {
-            list-style: none;
-            padding: 0;
-            margin: 8px 0 0;
-            display: grid;
-            gap: 8px;
-        }
-
-        .list li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 0 4px var(--ring);
-        }
-
-        /* CONTACT */
-        .contact {
-            display: grid;
-            grid-template-columns: 1fr .9fr;
-            gap: var(--gap);
-        }
-
-        .form {
-            display: grid;
-            gap: 10px;
-        }
-
-        .field {
-            display: grid;
-            gap: 6px;
-        }
-
-        .input,
-        .textarea {
-            border-radius: 12px;
-            background: var(--elev);
-            color: var(--text);
-            border: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
-            padding: .8rem 1rem;
-        }
-
-        .textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        /* FOOTER */
-        footer {
-            padding: 28px 0 54px;
-            color: var(--muted);
-            text-align: center;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 1024px) {
-            .hero-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .kpis {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .project {
-                grid-column: span 6;
-            }
-
-            .contact {
-                grid-template-columns: 1fr;
-            }
-
-            .cols {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .navlinks {
-                display: none;
-            }
-
-            .project {
-                grid-column: span 12;
-            }
-
-            .kpis {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        button {
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
     <header>
-        <div class="container nav">
-            <div class="brand">
-                <div class="avatar">J</div>
-                <div>
-                    Janani Vijay
-                    <div style="font-size:.8rem; color:var(--muted); font-weight:600">UI/UX Lead · Frontend Dev</div>
-                </div>
-            </div>
-            <nav class="navlinks">
-                <a href="#work">Work</a>
-                <a href="#skills">Skills</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a class="btn" href="#contact">Get in touch</a>
-                <button id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
-                </button>
-
-            </nav>
+        <div class="main-header">
+            <img src="assets/img/Logo.png" alt="Janani Logo" class="logo-img" />
+            <div class="desc">Janani is a UI/UX Designer based in India</div>
         </div>
+        <nav class="main-nav">
+            <a href="index.html">PORTFOLIO</a>
+            <a href="About.html">ABOUT</a>
+            <a href="Contact.html">CONTACT</a>
+        </nav>
     </header>
 
-    <main class="container">
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-inner">
-                <div>
-                    <h1>Product Designer & Frontend Developer</h1>
-                    <p class="subtitle">I design delightful, accessible interfaces and craft high-performance frontends.
-                        I bridge design and code to ship polished experiences faster.</p>
-                    <div class="badges">
-                        <span class="badge">Figma · Adobe XD · Photoshop</span>
-                        <span class="badge">HTML · CSS/SCSS · JavaScript</span>
-                        <span class="badge">React · Angular · Vue</span>
-                    </div>
+    <main>
+        <section id="portfolio" class="portfolio-list">
+            <div class="portfolio-card">
+                <div class="card-img" style="background:#000;">
+                    <img src="assets/img/Trendora.png" alt="Shopify Mobile App" style="width:90px;height:90px;">
                 </div>
-                <div class="hero-card">
-                    <strong>Snapshot</strong>
-                    <div class="kpis">
-                        <div class="kpi">
-                            <div class="num">6+ yrs</div>
-                            <div class="label">Experience</div>
-                        </div>
-                        <div class="kpi">
-                            <div class="num">35+</div>
-                            <div class="label">Projects</div>
-                        </div>
-                        <div class="kpi">
-                            <div class="num">10%</div>
-                            <div class="label">Avg. KPI lift</div>
-                        </div>
+                <div class="card-content">
+                    <div class="card-title">Trendora - Shopify based Mobile App</div>
+                    <div class="card-desc">
+                        Designed a simple, efficient, and user-friendly Shopify mobile app to enhance customer
+                        experience and streamline the purchase journey for fashion and lifestyle products.
                     </div>
+                    <a href="Shopify.html" class="read-more">Read More</a>
                 </div>
             </div>
-        </section>
-
-        <!-- WORK -->
-        <section id="work" class="section">
-            <h2>Selected Work</h2>
-            <p class="lead">A mix of product design, prototypes, and front‑end builds.</p>
-
-            <div class="filters" id="filters">
-                <button class="chip active" data-filter="all">All</button>
-                <button class="chip" data-filter="design">Design</button>
-                <button class="chip" data-filter="development">Development</button>
-                <button class="chip" data-filter="system">Design System</button>
-                <button class="chip" data-filter="dashboard">Dashboard</button>
-            </div>
-
-            <div class="grid" id="projectGrid">
-                <!-- Project Card Template → duplicate and edit -->
-                <article class="project" data-tags="design system">
-                    <div class="thumb">  <img src="images/UIKit.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">WebSplash – Unified UI Kit</div>
-                        <div class="meta">Design System · UI Design</div>
-                        <div class="tags"><span class="tag">Figma</span><span class="tag">Tokens</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank" rel="noopener">Case Study</a>
-                            <a class="btn ghost" href="#" target="_blank" rel="noopener">Preview</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project" data-tags="design dashboard">
-                    <div class="thumb">  <img src="images/Dashboard.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">Freely – Analytics Dashboard</div>
-                        <div class="meta">Dashboard · Design</div>
-                        <div class="tags"><span class="tag">UX</span><span class="tag">Accessibility</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank">Case Study</a>
-                            <a class="btn ghost" href="#" target="_blank">Prototype</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project" data-tags="development landing">
-                    <div class="thumb">
-                        <img src="images/Landing.jpeg" alt="Plantmi Marketing Landing Page">
-                    </div>
-                    <div class="body">
-                        <div class="title">Plantmi – Marketing Site</div>
-                        <div class="meta">Landing · Development</div>
-                        <div class="tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">SCSS</span>
-                            <span class="tag">GSAP</span>
-                        </div>
-                        <div class="actions">
-                            <a class="btn" href="https://your-live-link.com" target="_blank">Live</a>
-                            <a class="btn ghost" href="https://github.com/your-repo" target="_blank">Repo</a>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="project" data-tags="design prototype">
-                    <div class="thumb">  <img src="images/ElectronicsStore.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">Apple Store – Redesign</div>
-                        <div class="meta">Design & Prototype</div>
-                        <div class="tags"><span class="tag">Mobile</span><span class="tag">Interaction</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank">Prototype</a>
-                            <a class="btn ghost" href="#" target="_blank">Shots</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project" data-tags="development system">
-                    <div class="thumb">  <img src="images/Landing.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">Stark – React Components</div>
-                        <div class="meta">Development · System</div>
-                        <div class="tags"><span class="tag">React</span><span class="tag">Storybook</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank">Docs</a>
-                            <a class="btn ghost" href="#" target="_blank">Repo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project" data-tags="design research">
-                    <div class="thumb">  <img src="images/Landing.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">QuickBook – Checkout UX</div>
-                        <div class="meta">UX Research & App Design</div>
-                        <div class="tags"><span class="tag">Heuristics</span><span class="tag">A/B</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank">Summary</a>
-                            <a class="btn ghost" href="#" target="_blank">Artifacts</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project" data-tags="design development">
-                    <div class="thumb">  <img src="images/Landing.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">Xem – Product Pages</div>
-                        <div class="meta">Design & Development</div>
-                        <div class="tags"><span class="tag">Next.js</span><span class="tag">Stripe</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank">Live</a>
-                            <a class="btn ghost" href="#" target="_blank">Repo</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project" data-tags="design prototype">
-                    <div class="thumb">  <img src="images/Landing.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">Plantmi – Hero Exploration</div>
-                        <div class="meta">Design & Prototype</div>
-                        <div class="tags"><span class="tag">Figma</span><span class="tag">Motion</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank">Prototype</a>
-                            <a class="btn ghost" href="#" target="_blank">Shots</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project" data-tags="development dashboard">
-                    <div class="thumb">  <img src="images/Landing.jpeg" alt="Plantmi Marketing Landing Page"></div>
-                    <div class="body">
-                        <div class="title">Ledger – Admin Portal</div>
-                        <div class="meta">Frontend Development</div>
-                        <div class="tags"><span class="tag">Angular</span><span class="tag">RxJS</span></div>
-                        <div class="actions">
-                            <a class="btn" href="#" target="_blank">Live</a>
-                            <a class="btn ghost" href="#" target="_blank">Repo</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- SKILLS & ABOUT -->
-        <section id="skills" class="section">
-            <div class="cols">
-                <div class="card">
-                    <h2>Design Skills</h2>
-                    <p class="lead">From research to handoff with systemized components.</p>
-                    <ul class="list">
-                        <li><span class="dot"></span>Wireframing & user flows</li>
-                        <li><span class="dot"></span>Interactive prototypes (Figma/XD)</li>
-                        <li><span class="dot"></span>Visual design & design tokens</li>
-                        <li><span class="dot"></span>Accessibility (WCAG AA)</li>
-                        <li><span class="dot"></span>Design systems & documentation</li>
-                    </ul>
+            <div class="portfolio-card">
+                <div class="card-img" style="background:#000000;">
+                    <img src="assets/img/ChatLogo.png" alt="ChatBot Mobile App" style="width:90px;height:90px;">
                 </div>
-                <div class="card">
-                    <h2>Development Skills</h2>
-                    <p class="lead">Robust, accessible UIs with performance in mind.</p>
-                    <ul class="list">
-                        <li><span class="dot" style="background:var(--accent-2)"></span>HTML5, CSS3/SCSS, JS/TS</li>
-                        <li><span class="dot" style="background:var(--accent-2)"></span>React, Angular, Vue</li>
-                        <li><span class="dot" style="background:var(--accent-2)"></span>State mgmt, REST/GraphQL</li>
-                        <li><span class="dot" style="background:var(--accent-2)"></span>Unit tests & Storybook</li>
-                        <li><span class="dot" style="background:var(--accent-2)"></span>CI/CD & GitHub Pages</li>
-                    </ul>
+                <div class="card-content">
+                    <div class="card-title">Aether - ChatBot Mobile App</div>
+                    <div class="card-desc">
+                        Designed a white-label chatbot app that organizations can instantly rebrand and deploy. Focused
+                        on seamless onboarding, customizable branding, and an intuitive dark-themed chat interface to
+                        enhance both user engagement and business scalability.
+                    </div>
+                    <a href="Chatbot.html" class="read-more">Read More</a>
                 </div>
-            </div>
-        </section>
 
-        <section id="about" class="section">
-            <div class="card">
-                <h2>About</h2>
-                <p class="lead">Hi, I’m Janani — a UI/UX lead who codes. I love translating product goals into elegant
-                    flows and components, then implementing them with clean, scalable front‑end architectures. I
-                    collaborate closely with engineers, PMs and stakeholders to ship quickly without sacrificing craft.
-                </p>
             </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <div class="contact">
-                <form class="card form" onsubmit="submitForm(event)">
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input class="input" id="name" name="name" placeholder="Your name" required />
+            <div class="portfolio-card">
+                <div class="card-img" style="background:#2a0051;">
+                    <img src="assets/img/MusicLogo.png" alt="Music App Mobile UI" style="width:90px;height:90px;">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Music App Mobile UI</div>
+                    <div class="card-desc">
+                        Designed a vibrant music streaming app prototype with personalized playlists, seamless playback, 
+    and mood-based discovery. User testing showed 90% satisfaction and 50% faster content discovery 
+    compared to competitors.
                     </div>
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input class="input" id="email" name="email" type="email" placeholder="you@example.com"
-                            required />
-                    </div>
-                    <div class="field">
-                        <label for="msg">Message</label>
-                        <textarea class="textarea" id="msg" name="message" placeholder="Hello Janani, we’d like to…"
-                            required></textarea>
-                    </div>
-                    <button class="btn" type="submit">Send message</button>
-                    <div id="formStatus" class="subtitle" role="status" aria-live="polite"></div>
-                </form>
-                <div class="card">
-                    <strong>Elsewhere</strong>
-                    <ul class="list" style="margin-top:12px">
-                        <li><span class="dot"></span><a href="https://www.linkedin.com" target="_blank"
-                                rel="noopener">LinkedIn</a></li>
-                        <li><span class="dot"></span><a href="https://github.com" target="_blank"
-                                rel="noopener">GitHub</a></li>
-                        <li><span class="dot"></span><a href="https://dribbble.com" target="_blank"
-                                rel="noopener">Dribbble</a></li>
-                        <li><span class="dot"></span><a href="mailto:hello@example.com">hello@example.com</a></li>
-                    </ul>
+                    <a href="Music.html" class="read-more">Read More</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="container">
-        © <span id="year"></span> Janani Vijay — Built with love in HTML/CSS/JS.
+    <footer class="footer">
+        <div class="footer-links">
+            jananivijay16@gmail.com &nbsp;·&nbsp;
+
+            <a href="www.linkedin.com/in/janani-vijay-9103a9139">LinkedIn</a> ·
+            <a href="https://dribbble.com/janani_vijay_uiux">Dribble</a> ·
+            <a href="Contact.html">Buy me a coffee</a>
+        </div>
+        <div class="footer-copy">
+            Website design and content © 2025 Janani.
+        </div>
     </footer>
-
-    <script>
-        const root = document.documentElement;
-        const toggle = document.getElementById('themeToggle');
-        const icon = toggle.querySelector("i");
-
-        // Load saved theme or system preference
-        const savedTheme = localStorage.getItem('theme') ||
-            (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-        setTheme(savedTheme);
-
-        toggle.addEventListener('click', () => {
-            const current = root.getAttribute('data-theme');
-            const next = current === 'light' ? 'dark' : 'light';
-            setTheme(next);
-        });
-
-        function setTheme(mode) {
-            root.setAttribute('data-theme', mode);
-            localStorage.setItem('theme', mode);
-            icon.className = mode === 'light' ? "fas fa-sun" : "fas fa-moon";
-        }
-
-        // Footer year
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
 </body>
 
 </html>
