@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Janani Vijay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700|Oswald:700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    /* Contact Section Styles */
+    /* filepath: d:\Janani\Portfolio\assets\css\style.css */
+
+    /* Layout */
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      justify-content: center;
+      align-items: flex-start;
+      background: #f7f7fa;
+      padding: 3rem 1rem;
+      border-radius: 18px;
+      margin: 2rem auto;
+      max-width: 900px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    /* Contact Form */
+    .contact-form {
+      flex: 1 1 320px;
+      background: #fff;
+      padding: 2rem 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .contact-form h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      font-family: 'Oswald', Arial, sans-serif;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.8rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #fafbfc;
+      transition: border 0.2s;
+      resize: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #7b4fff;
+      outline: none;
+    }
+
+    .contact-form button {
+      background: #7b4fff;
+      color: #fff;
+      border: none;
+      padding: 0.9rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-form button:hover {
+      background: #5a34c8;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      flex: 1 1 260px;
+      background: #fff;
+      padding: 2rem 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .contact-info h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      font-family: 'Oswald', Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .contact-info p {
+      margin: 0.7rem 0;
+      font-size: 1rem;
+    }
+
+    .contact-info a {
+      color: #7b4fff;
+      text-decoration: none;
+      transition: text-decoration 0.2s;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+ .case-hero {
+      background: #232427;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 60px 20px;
+    }
+
+    .case-hero .card-title {
+      color: #fff;
+      font-size: 2.8rem;
+      margin-bottom: 24px;
+    }
+
+    .case-hero .case-summary {
+      font-size: 1.18rem;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      line-height: 1.7;
+    }
+
+    .case-hero .case-note {
+      color: #888;
+      font-size: 0.98rem;
+      font-style: italic;
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Responsive */
+    @media (max-width: 800px) {
+      .contact-section {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 0.5rem;
+      }
+    }
+  </style>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <div class="main-header">
+      <img src="assets/img/Logo.png" alt="Janani Logo" class="logo-img" />
+      <div class="desc">Janani is a UI/UX Designer based in India</div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">PORTFOLIO</a>
+      <a href="About.html">ABOUT</a>
+      <a href="Contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+ 
+
+  <main class="about-main">
+    <section class="case-hero">
+    <div class="card-title">Let’s Connect</div>
+    <div class="case-summary">
+     
+     Have a project idea or just want to say hi? I’d love to hear from you! Reach out and let’s create something amazing together.
+      </div>
+
+  </section>
+  
+<section class="contact-section">
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  
+</section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      jananivijay16@gmail.com &nbsp;·&nbsp;
+      <a href="www.linkedin.com/in/janani-vijay-9103a9139">LinkedIn</a> ·
+      <a href="https://dribbble.com/janani_vijay_uiux">Dribble</a> ·
+      <a href="Contact.html">Buy me a coffee</a>
+    </div>
+    <div class="footer-copy">
+      Website design and content © 2025 Janani.
+    </div>
+  </footer>
+  <script>
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      .then(function() {
+        alert('Message sent!');
+      }, function(error) {
+        alert('Failed to send: ' + JSON.stringify(error));
+      });
+  });
+</script>
+</body>
+</html>
