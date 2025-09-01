@@ -172,7 +172,7 @@ body {
 
 @media (max-width: 600px) {
     main {
-   padding: 30px 30px;
+   padding: 30px !important;
 }
     .main-header, .footer {
         align-items: center;
