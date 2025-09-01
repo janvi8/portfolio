@@ -172,8 +172,7 @@ body {
 
 @media (max-width: 600px) {
     .main-header, .footer {
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         padding: 10px;
     }
     .main-nav {
