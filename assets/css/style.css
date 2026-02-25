@@ -58,6 +58,10 @@ body {
     color: #C67C4E;
 }
 
+.view-link{
+    color: #C67C4E;
+}
+
 /* Portfolio List */
 .portfolio-list {
     max-width: 96vw;
